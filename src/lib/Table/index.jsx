@@ -5,10 +5,8 @@ import styled from 'styled-components'
 import colors from './Utils/styles/colors'
 
 export const Table = ({ data, model}) => {
-  
-  const sourceData = Array.from(data)
 
-  const [entriesPerPage, setEntriesPerPage] = useState(10)
+  const [ entriesPerPage, setEntriesPerPage ] = useState(10)
   const [ searchText, setSearchText ] = useState('')
 
   return (
@@ -38,7 +36,7 @@ export const Table = ({ data, model}) => {
       </TableOptionsContainer>
 
       <Tableau
-        sourceData={sourceData}
+        sourceData={data}
         searchText={searchText}
         entriesPerPage={entriesPerPage}
         model={model}

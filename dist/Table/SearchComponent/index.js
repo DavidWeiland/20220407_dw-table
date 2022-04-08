@@ -8,6 +8,8 @@ export default function SearchComponent({
   value,
   onChange
 }) {
+  // input 
+  // onChange sends the new value to state modification function
   return /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement(Label, {
     htmlFor: id
   }, label), /*#__PURE__*/React.createElement(Input, {

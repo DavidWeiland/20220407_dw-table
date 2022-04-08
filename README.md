@@ -1,4 +1,4 @@
-![shields](https://img.shields.io/badge/version-v1.0.0-blue)
+![shields](https://img.shields.io/badge/version-v1.1.0-blue)
 ![shields](https://img.shields.io/badge/make_with-React_in_create--react--app-red)
 ![shields](https://img.shields.io/badge/author-David_Weiland-green)
 
@@ -61,7 +61,7 @@ export const YourApp = ()=> {
 
 ## Props
 #### Required props
-- `data={}`: this is the source of your table
+- `data={}`: this is the source of your table (array)
 - `model={}`: (all of this options are required)
   - title : header entry of the table,
   - value : the link to the data,

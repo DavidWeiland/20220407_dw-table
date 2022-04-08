@@ -7,12 +7,15 @@ export const Row = ({
   row,
   model
 }) => {
-  const bgColor = entry % 2 === 1 ? `${colors.defaultBg}` : `${colors.BgRow}`;
-  const line = [];
+  // change the background once in two
+  const bgColor = entry % 2 === 1 ? `${colors.defaultBg}` : `${colors.BgRow}`; // build lines of table
+
+  const lines = [];
   model.forEach((elmt, index) => {
+    // retrieves the information from the model and applies the corresponding values
     const flexValue = elmt.flex;
     const rowValue = row[elmt.value];
-    line.push( /*#__PURE__*/React.createElement(StyledCell, {
+    lines.push( /*#__PURE__*/React.createElement(StyledCell, {
       key: `${index}-${elmt}—${row}`,
       style: {
         flex: flexValue
@@ -23,7 +26,7 @@ export const Row = ({
     style: {
       backgroundColor: `${bgColor}`
     }
-  }, line);
+  }, lines);
 };
 const StyledContainer = styled.div`
   border-bottom: 1px ${colors.greyMedium} solid;

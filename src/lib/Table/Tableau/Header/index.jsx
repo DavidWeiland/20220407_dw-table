@@ -5,6 +5,7 @@ import { Cell } from './cell'
 
 export const Header = ({ data, onClick, model }) => {
 
+  // builds the header row of the table
   return (
     <StyledContainer>
       {model.map(({title, value, flex}, index) =>

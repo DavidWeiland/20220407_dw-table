@@ -8,6 +8,7 @@ export const Cell = ({
   data,
   onClick
 }) => {
+  //sorting functions for one cell
   const triAZ = () => {
     return onClick(Array.from(data).sort((a, b) => a[value] > b[value] ? 1 : -1));
   };

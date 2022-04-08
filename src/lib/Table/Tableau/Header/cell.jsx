@@ -4,6 +4,7 @@ import colors from './../../Utils/styles/colors'
 
 export const Cell = ({ dataKey, value, flexValue, data, onClick}) => {
   
+  //sorting functions for one cell
   const triAZ = () => {
     return onClick(Array.from(data).sort((a, b) => a[value] > b[value] ? 1 : -1))
   }

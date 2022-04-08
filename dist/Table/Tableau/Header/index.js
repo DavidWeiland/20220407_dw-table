@@ -7,6 +7,7 @@ export const Header = ({
   onClick,
   model
 }) => {
+  // builds the header row of the table
   return /*#__PURE__*/React.createElement(StyledContainer, null, model.map(({
     title,
     value,

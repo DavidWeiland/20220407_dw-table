@@ -9,22 +9,17 @@ export const Tableau = ({ sourceData, entriesPerPage, searchText, model }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const indexMax = indexMin + entriesPerPage - 1
 
+  // builds entries to display
   const rows = []
   data.forEach((item) => {
-    const { firstName, lastName, startDate, department, dateOfBirth, street, city, state, zipCode } = item
-    if (
-      firstName.toLowerCase().includes(searchText.toLowerCase()) ||
-      lastName.toLowerCase().includes(searchText.toLowerCase()) ||
-      startDate.includes(searchText) ||
-      department.toLowerCase().includes(searchText.toLowerCase()) ||
-      dateOfBirth.includes(searchText) ||
-      street.toLowerCase().includes(searchText.toLowerCase()) ||
-      city.toLowerCase().includes(searchText.toLowerCase()) ||
-      state.toLowerCase().includes(searchText.toLowerCase()) ||
-      zipCode.includes(searchText)
-    ) {
-      rows.push(item)
-    }
+    model.forEach(elmt => {
+      const value=elmt.value
+      if (item[value].toLowerCase().includes(searchText.toLowerCase())) {
+        if (!rows.includes(item)) {
+          rows.push(item)
+        }
+      }
+    })
   })
   
   return (

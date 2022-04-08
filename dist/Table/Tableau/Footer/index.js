@@ -9,7 +9,8 @@ export const Footer = ({
   setIndexMin,
   setCurrentPage
 }) => {
-  const indexMax = indexMin + entriesPerPage - 1 < currentLength ? indexMin + entriesPerPage - 1 : currentLength;
+  // determines the number of the last enry displayed
+  const indexMax = indexMin + entriesPerPage - 1 < currentLength ? indexMin + entriesPerPage - 1 : currentLength; // navigates to previous or next page
 
   const previousFunction = () => {
     if (currentPage > 1) {

@@ -4,6 +4,8 @@ import colors from "./../Utils/styles/colors"
 
 export default function SearchComponent({ type, id, label, value, onChange }) {
 
+  // input 
+  // onChange sends the new value to state modification function
   return (
     <Container>
       <Label htmlFor={id}>

@@ -1,3 +1,4 @@
+// return french format of date
 export const formatDate = dateStr => {
   if (dateStr) {
     const date = new Date(dateStr);

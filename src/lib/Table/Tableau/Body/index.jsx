@@ -4,19 +4,21 @@ import colors from './../../Utils/styles/colors'
 import { formatDate } from '../../Utils/FormatDateFunction'
 
 export const Row = ({ entry, row, model }) => {
-  
+  // change the background once in two
   const bgColor = entry % 2 === 1 ? `${colors.defaultBg}` : `${colors.BgRow}`
   
-  const line = []
-    model.forEach((elmt, index)=>{
-      const flexValue = elmt.flex
-      const rowValue = row[ elmt.value ]
-      line.push(<StyledCell key={`${index}-${elmt}—${row}`} style={{ flex: flexValue }}>{elmt.type==='date'?formatDate(rowValue):rowValue}</StyledCell>)
-    })
+  // build lines of table
+  const lines = []
+  model.forEach((elmt, index) => {
+    // retrieves the information from the model and applies the corresponding values
+    const flexValue = elmt.flex
+    const rowValue = row[ elmt.value ]
+    lines.push(<StyledCell key={`${index}-${elmt}—${row}`} style={{ flex: flexValue }}>{elmt.type==='date'?formatDate(rowValue):rowValue}</StyledCell>)
+  })
     
   return (
     <StyledContainer style={{ backgroundColor: `${bgColor}` }}>
-      {line}
+      {lines}
     </StyledContainer>
   )
 }

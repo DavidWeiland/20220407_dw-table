@@ -2,20 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import colors from './../../Utils/styles/colors'
 
-export const Footer = ({
-  indexMin,
-  currentLength,
-  currentPage,
-  entriesPerPage,
-  setIndexMin,
-  setCurrentPage,
-}) => {
-
+export const Footer = ({ indexMin, currentLength, currentPage, entriesPerPage, setIndexMin, setCurrentPage }) => {
+// determines the number of the last enry displayed
   const indexMax =
     indexMin + entriesPerPage - 1 < currentLength
       ? indexMin + entriesPerPage - 1
       : currentLength
 
+// navigates to previous or next page
   const previousFunction = () => {
     if (currentPage > 1) {
       setCurrentPage(c => c - 1)

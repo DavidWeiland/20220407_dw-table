@@ -7,7 +7,6 @@ export const Table = ({
   data,
   model
 }) => {
-  const sourceData = Array.from(data);
   const [entriesPerPage, setEntriesPerPage] = useState(10);
   const [searchText, setSearchText] = useState('');
   return /*#__PURE__*/React.createElement(MainContainer, null, /*#__PURE__*/React.createElement(TableOptionsContainer, null, /*#__PURE__*/React.createElement(Container, null, /*#__PURE__*/React.createElement(SpanSelect, null, "Show "), /*#__PURE__*/React.createElement(Select, {
@@ -28,7 +27,7 @@ export const Table = ({
     value: searchText,
     onChange: e => setSearchText(e.target.value)
   })), /*#__PURE__*/React.createElement(Tableau, {
-    sourceData: sourceData,
+    sourceData: data,
     searchText: searchText,
     entriesPerPage: entriesPerPage,
     model: model
